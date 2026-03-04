@@ -1,0 +1,108 @@
+1. Sum of Even Numbers
+fun main() {
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    var sum = 0
+    for (num in numbers) {
+        if (num % 2 == 0) sum += num
+    }
+    println("Sum of even numbers: $sum")
+}
+
+2. Maximum in a List
+fun main() {
+    val numbers = listOf(3, 7, 1, 9, 4, 15, 2)
+    var max = numbers[0]
+    for (num in numbers) {
+        if (num > max) max = num
+    }
+    println("Maximum: $max")
+}
+
+3. FizzBuzz
+fun main() {
+    for (i in 1..50) {
+        when {
+            i % 3 == 0 && i % 5 == 0 -> println("Fizzbuzz")
+            i % 3 == 0 -> println("Fizz")
+            i % 5 == 0 -> println("Buzz")
+            else -> println(i)
+        }
+    }
+}
+
+4. Count Vowels in a String
+fun main() {
+    val str = "Hello World"
+    val vowels = setOf('a', 'e', 'i', 'o', 'u')
+    var count = 0
+    for (char in str.lowercase()) {
+        if (char in vowels) count++
+    }
+    println("Vowel count: $count")
+}
+
+5. Remove Duplicates from a List
+fun main() {
+    val numbers = listOf(1, 2, 2, 3, 4, 4, 5)
+    val result = mutableListOf<Int>()
+    for (num in numbers) {
+        if (num !in result) result.add(num)
+    }
+    println("Without duplicates: $result")
+}
+
+6. Reverse a List
+fun main() {
+    val items = listOf("apple", "banana", "cherry", "date")
+    val result = mutableListOf<String>()
+    for (i in items.indices.reversed()) {
+        result.add(items[i])
+    }
+    println("Reversed: $result")
+}
+
+7. Factorial of a Number
+fun main() {
+    val n = 6
+    var result = 1L
+    for (i in 1..n) {
+        result *= i
+    }
+    println("Factorial of $n: $result")
+}
+
+8. Sum of Positive Numbers
+fun main() {
+    val numbers = listOf(-3, -1, 2, 5, -2, 8)
+    var sum = 0
+    for (num in numbers) {
+        if (num > 0) sum += num
+    }
+    println("Sum of positive numbers: $sum")
+}
+
+9. Number Guessing with While Loop
+fun main() {
+    val secret = (1..10).random()
+    var guess = -1
+    while (guess != secret) {
+        print("Guess a number between 1 and 10: ")
+        guess = readLine()?.toIntOrNull() ?: continue
+        when {
+            guess < secret -> println("Too low!")
+            guess > secret -> println("Too high!")
+            else -> println("Correct! The number was $secret")
+        }
+    }
+}
+
+10. Print a Pattern
+
+fun main() {
+    for (i in 1..5) {
+        for (j in 1..i) {
+            print("*")
+        }
+        println()
+    }
+}
